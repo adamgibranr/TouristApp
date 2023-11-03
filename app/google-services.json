@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "132743842996",
+    "project_id": "fbase-auth2",
+    "storage_bucket": "fbase-auth2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132743842996:android:65bde450f5c1545466dbe1",
+        "android_client_info": {
+          "package_name": "com.example.fbaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmtN66F8WwpZgMz2eLX-Qg0msX7eEXxm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

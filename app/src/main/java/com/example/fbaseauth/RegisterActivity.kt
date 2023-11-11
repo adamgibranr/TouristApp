@@ -43,10 +43,10 @@ class RegisterActivity : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.editText_email_register)
         val passwd = findViewById<EditText>(R.id.editText_password_register)
 
-        if (email.text.isEmpty() || passwd.text.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields",Toast.LENGTH_SHORT)
-                    .show()
-                return
+        if (email.text.isEmpty() || passwd.text.isEmpty()){
+            Toast.makeText(this, "email & password kosong", Toast.LENGTH_SHORT)
+                .show()
+            return
         }
 
         val inputEmail = email.text.toString()
@@ -59,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
 //                    Log.d(TAG, "createUserWithEmail:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
 
                     Toast.makeText(

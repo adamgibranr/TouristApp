@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.fbaseauth'
+    namespace 'com.example.touristapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.fbaseauth"
+        applicationId "com.example.touristapp"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -39,6 +39,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+//    implementation 'com.google.firebase:firebase-auth:21.0.3'
 //    implementation 'com.google.firebase:firebase-auth:22.2.0'
 //    implementation 'com.google.firebase:firebase-auth:21.0.3'
     testImplementation 'junit:junit:4.13.2'

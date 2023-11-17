@@ -1,4 +1,4 @@
-package com.example.fbaseauth
+package com.example.touristapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,50 +11,54 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
+        // Initialize Firebase Auth
         auth = Firebase.auth
 
-        val registertext: TextView = findViewById(R.id.textView_register_now)
+        val logintext: TextView = findViewById(R.id.textView_login_now)
 
-        registertext.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+        logintext.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        val loginButton: Button = findViewById(R.id.btn_login)
+        val registerButton: Button = findViewById(R.id.btn_register)
 
-        loginButton.setOnClickListener {
-            performLogin()
+        registerButton.setOnClickListener {
+            performSignUp()
         }
+
+        //lets get email and password from thee user
     }
 
-    private fun performLogin() {
-        val email: EditText = findViewById(R.id.editText_email_login)
-        val password: EditText = findViewById(R.id.editText_password_login)
+    private fun performSignUp(){
+        val email = findViewById<EditText>(R.id.editText_email_register)
+        val passwd = findViewById<EditText>(R.id.editText_password_register)
 
-        if (email.text.isEmpty() || password.text.isEmpty()) {
-            Toast.makeText(this, "username & passoword kosong", Toast.LENGTH_SHORT)
+        if (email.text.isEmpty() || passwd.text.isEmpty()){
+            Toast.makeText(this, "email & password kosong", Toast.LENGTH_SHORT)
                 .show()
             return
         }
 
-        val emailInput = email.text.toString()
-        val passwordInput = password.text.toString()
+        val inputEmail = email.text.toString()
+        val inputPassword = passwd.text.toString()
 
-        auth.signInWithEmailAndPassword(emailInput, passwordInput)
+        auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "signInWithEmail:success")
+//                    Log.d(TAG, "createUserWithEmail:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
 
                     Toast.makeText(
@@ -62,9 +66,10 @@ class LoginActivity : AppCompatActivity() {
                         "Authentication success.",
                         Toast.LENGTH_SHORT,
                     ).show()
+
                 } else {
                     // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+//                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(
                         baseContext,
                         "Authentication failed.",
@@ -74,9 +79,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener {
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Error",Toast.LENGTH_SHORT)
                     .show()
             }
-
     }
 }

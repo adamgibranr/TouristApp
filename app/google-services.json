@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "132743842996",
-    "project_id": "fbase-auth2",
-    "storage_bucket": "fbase-auth2.appspot.com"
+    "project_number": "1036968157206",
+    "project_id": "touristapp-d50f2",
+    "storage_bucket": "touristapp-d50f2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:132743842996:android:65bde450f5c1545466dbe1",
+        "mobilesdk_app_id": "1:1036968157206:android:480a0698e178ee706dd537",
         "android_client_info": {
-          "package_name": "com.example.fbaseauth"
+          "package_name": "com.example.touristapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAmtN66F8WwpZgMz2eLX-Qg0msX7eEXxm4"
+          "current_key": "AIzaSyBy-A7U3w50y_-QMlTKuLomaHMq5D2WZ_E"
         }
       ],
       "services": {

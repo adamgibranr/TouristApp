@@ -1,4 +1,4 @@
-package com.example.fbaseauth
+package com.example.touristapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

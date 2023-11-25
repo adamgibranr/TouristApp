@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.maps.model.LatLng
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,9 +36,9 @@ class MainActivity : AppCompatActivity() {
 
 
         val listDestinasi = listOf(
-            Destinasi(name = "List 1", image = ""),
-            Destinasi(name = "List 2", image = ""),
-            Destinasi(name = "List 3", image = "")
+            Destinasi(name = "List 1", image = "", LatLng(-6.200000,106.816666)),
+            Destinasi(name = "List 2", image = "",LatLng(-7.161367,113.482498)),
+            Destinasi(name = "List 3", image = "",LatLng(5.548290,95.323753))
         )
 
         val destinasiAdapter = DestinasiAdapter(listDestinasi)

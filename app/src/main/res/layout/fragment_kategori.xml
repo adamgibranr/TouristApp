@@ -13,29 +13,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_destinasi"
-            android:layout_width="180dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:text="List Destinasi"
-            android:backgroundTint="#64F1E3"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
+        <ImageView
+            android:id="@+id/btn_exit_kategori"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="350dp"
+            android:src="@drawable/ic_launcher_foreground"/>
 
-        <Button
-            android:id="@+id/button_peta"
-            android:layout_width="180dp"
-            android:layout_height="60dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="0dp"
-            android:text="Peta Destinasi"
-            android:backgroundTint="#304DEC"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
     </LinearLayout>
 
     <LinearLayout
@@ -47,13 +31,10 @@
         android:orientation="horizontal"
         android:padding="20dp">
 
-        <fragment
-            class="com.google.android.gms.maps.SupportMapFragment"
-            android:id="@+id/map_fragment"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvKategori"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/activity_main2" />
-
+            android:layout_height="match_parent"/>
 
         <!--
         <ImageView
@@ -77,25 +58,12 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/icon1"
+            android:id="@+id/btn_ok_kategori"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="180dp"
             android:src="@drawable/ic_launcher_foreground"/>
 
-        <ImageView
-            android:id="@+id/icon2"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="120dp"
-            android:src="@drawable/ic_launcher_foreground"/>
-
-        <ImageView
-            android:id="@+id/icon3"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="105dp"
-            android:src="@drawable/ic_launcher_foreground"/>
     </LinearLayout>
 
 

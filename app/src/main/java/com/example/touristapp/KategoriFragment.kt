@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,13 @@ class KategoriFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+
+    private lateinit var adapter : KategoriAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var listKategori: List<Kategori>
+
+    //lateinit var text: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,5 +65,23 @@ class KategoriFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        dataInitialize()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.rvKategori)
+        recyclerView.layoutManager = layoutManager
+        adapter = KategoriAdapter(listKategori)
+        recyclerView.adapter = adapter
+    }
+
+    private fun dataInitialize() {
+        listKategori = listOf(
+            Kategori("Kategori A"),
+            Kategori("Kategori B"),
+            Kategori("Kategori C"),
+            )
     }
 }

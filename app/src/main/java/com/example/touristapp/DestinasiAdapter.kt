@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class DestinasiAdapter(
 
@@ -16,9 +18,11 @@ class DestinasiAdapter(
 
     class DestinasiHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val textViewDestinasi: TextView = view.findViewById(R.id.tv_destinasi)
+        private val textViewDestinasi: TextView = view.findViewById(R.id.tv_destinasi)
+        private  val imageDestinasi: ImageView = view.findViewById(R.id.img_destinasi)
         fun bindDestinasi(destinasi: Destinasi){
             textViewDestinasi.text = destinasi.name
+            //Picasso.get().load(destinasi.image).into(imageDestinasi)
         }
     }
 

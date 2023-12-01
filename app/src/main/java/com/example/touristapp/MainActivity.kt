@@ -1,9 +1,14 @@
 package com.example.touristapp
 
 import android.content.Intent
+import android.graphics.drawable.Icon
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
@@ -14,18 +19,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toMainActivity: TextView = findViewById(R.id.button_destinasi)
+        val toMainActivity: View = findViewById(R.id.button_destinasi)
 
         toMainActivity.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val toMainActivity2: TextView = findViewById(R.id.button_peta)
+        val toMainActivity2: View = findViewById(R.id.button_peta)
 
         toMainActivity2.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
+        }
+
+        val toKategoriFragment: ImageView = findViewById(R.id.icon3)
+
+        toKategoriFragment.setOnClickListener{
+            replaceFragment(KategoriFragment())
+
         }
 
 
@@ -48,6 +60,12 @@ class MainActivity : AppCompatActivity() {
             adapter = destinasiAdapter
         }
 
+    }
 
+    private fun replaceFragment(KategoriFragment : Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
+        fragmentTransaction.commit()
     }
 }

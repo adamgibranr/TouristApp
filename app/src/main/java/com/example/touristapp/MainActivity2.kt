@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.TextView
 import com.google.android.gms.maps.SupportMapFragment
 import android.content.Context
+import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
@@ -54,6 +56,18 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val toKategoriFragment: ImageView = findViewById(R.id.icon3)
 
+        toKategoriFragment.setOnClickListener{
+            replaceFragment(KategoriFragment())
+
+        }
+    }
+
+    private fun replaceFragment(KategoriFragment : Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
+        fragmentTransaction.commit()
     }
 }

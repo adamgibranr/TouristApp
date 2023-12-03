@@ -3,38 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="35dp"
+    android:layout_width="340dp"
+    android:layout_height="470dp"
     android:orientation="vertical"
-    tools:context=".KategoriFragment">
+    tools:context=".KategoriFragment"
+    android:background="@drawable/ic_launcher_background">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/btn_exit_kategori"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginLeft="270dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvKategori"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="334dp" />
+
 
         <ImageView
-            android:id="@+id/btn_exit_kategori"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="350dp"
-            android:src="@drawable/ic_launcher_foreground"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="604dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="20dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvKategori"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:id="@+id/btn_ok_kategori"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="135dp"
+            android:src="@drawable/ic_launcher_foreground" />
 
         <!--
         <ImageView
@@ -51,20 +47,5 @@
             android:text="judul"
             android:textSize="16sp" />
             -->
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/btn_ok_kategori"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="180dp"
-            android:src="@drawable/ic_launcher_foreground"/>
-
-    </LinearLayout>
-
 
 </LinearLayout>

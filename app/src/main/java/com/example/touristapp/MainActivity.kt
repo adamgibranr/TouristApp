@@ -33,13 +33,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val toKategoriFragment: ImageView = findViewById(R.id.icon3)
+        val toKategoriActivity: View = findViewById(R.id.icon3)
 
-        toKategoriFragment.setOnClickListener{
-            replaceFragment(KategoriFragment())
-
+        toKategoriActivity.setOnClickListener {
+            val intent = Intent(this, KategoriActivity::class.java)
+            startActivity(intent)
         }
-
 
         val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
         //rvDestinasi.adapter = DestinasiAdapter(this, )
@@ -62,10 +61,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun replaceFragment(KategoriFragment : Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
-        fragmentTransaction.commit()
-    }
+    //val toKategoriFragment: ImageView = findViewById(R.id.icon3)
+
+    //toKategoriFragment.setOnClickListener{
+    //    replaceFragment(KategoriFragment())
+
+    //}
+
+
+    //private fun replaceFragment(KategoriFragment : Fragment) {
+    //    val fragmentManager = supportFragmentManager
+    //    val fragmentTransaction = fragmentManager.beginTransaction()
+    //    fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
+     //   fragmentTransaction.commit()
+    //}
 }

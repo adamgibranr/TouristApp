@@ -38,7 +38,7 @@
             />
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="604dp"
@@ -71,7 +71,7 @@
             android:text="judul"
             android:textSize="16sp" />
             -->
-    </FrameLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

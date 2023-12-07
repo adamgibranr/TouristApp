@@ -56,18 +56,18 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val toKategoriFragment: ImageView = findViewById(R.id.icon3)
+    //    val toKategoriFragment: ImageView = findViewById(R.id.icon3)
 
-        toKategoriFragment.setOnClickListener{
-            replaceFragment(KategoriFragment())
+    //    toKategoriFragment.setOnClickListener{
+     //       replaceFragment(KategoriFragment())
 
-        }
+      //  }
     }
 
-    private fun replaceFragment(KategoriFragment : Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
-        fragmentTransaction.commit()
-    }
+    //private fun replaceFragment(KategoriFragment : Fragment) {
+    //    val fragmentManager = supportFragmentManager
+    //    val fragmentTransaction = fragmentManager.beginTransaction()
+    //    fragmentTransaction.replace(R.id.frame_layout,KategoriFragment)
+    //    fragmentTransaction.commit()
+    //}
 }

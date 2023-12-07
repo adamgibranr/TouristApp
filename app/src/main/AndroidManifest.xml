@@ -12,6 +12,12 @@
         android:theme="@style/Theme.TouristApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddDestinasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KategoriActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
@@ -37,6 +43,7 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDE6fZORQU8FMx6-8GZS9NtTPAyF920bpQ" />

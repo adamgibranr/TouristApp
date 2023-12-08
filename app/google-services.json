@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "1036968157206",
-    "project_id": "touristapp-d50f2",
-    "storage_bucket": "touristapp-d50f2.appspot.com"
+    "project_number": "255463450560",
+    "firebase_url": "https://touristapp-32fb5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "touristapp-32fb5",
+    "storage_bucket": "touristapp-32fb5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1036968157206:android:480a0698e178ee706dd537",
+        "mobilesdk_app_id": "1:255463450560:android:54e828c6ec5ddb1e240a25",
         "android_client_info": {
           "package_name": "com.example.touristapp"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBy-A7U3w50y_-QMlTKuLomaHMq5D2WZ_E"
+          "current_key": "AIzaSyDeYS2D9DGxquGHnATGBJOmFH8UTz5D-Ww"
         }
       ],
       "services": {

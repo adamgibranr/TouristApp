@@ -16,17 +16,17 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MainActivity2 : AppCompatActivity() {
 
     private val places: List<Destinasi> = listOf(
-        Destinasi(name = "List 1", image = "", LatLng(-6.200000,106.816666)),
-        Destinasi(name = "List 2", image = "", LatLng(-7.161367,113.482498)),
-        Destinasi(name = "List 3", image = "", LatLng(5.548290,95.323753))
+        Destinasi(nama = "List 1",),
+        Destinasi(nama = "List 2",),
+        Destinasi(nama = "List 3",)
     )
 
     private fun addMarkers(googleMap: GoogleMap) {
         places.forEach { place ->
             val marker = googleMap.addMarker(
                 MarkerOptions()
-                    .title(place.name)
-                    .position(place.latLng)
+                    .title(place.nama)
+                    //.position(place.latLng)
             )
         }
     }

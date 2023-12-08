@@ -40,6 +40,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val toAddDestinasiActivity: View = findViewById(R.id.icon2)
+
+        toAddDestinasiActivity.setOnClickListener {
+            val intent = Intent(this, AddDestinasiActivity::class.java)
+            startActivity(intent)
+        }
+
+
         val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
         //rvDestinasi.adapter = DestinasiAdapter(this, )
 
@@ -47,9 +55,9 @@ class MainActivity : AppCompatActivity() {
 
 
         val listDestinasi = listOf(
-            Destinasi(name = "List 1", image = "", LatLng(-6.200000,106.816666)),
-            Destinasi(name = "List 2", image = "",LatLng(-7.161367,113.482498)),
-            Destinasi(name = "List 3", image = "",LatLng(5.548290,95.323753))
+            Destinasi(nama = "List 1",),
+            Destinasi(nama = "List 2",),
+            Destinasi(nama = "List 3",)
         )
 
         val destinasiAdapter = DestinasiAdapter(listDestinasi)

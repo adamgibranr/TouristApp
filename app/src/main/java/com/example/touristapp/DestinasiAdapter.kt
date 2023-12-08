@@ -21,7 +21,7 @@ class DestinasiAdapter(
         private val textViewDestinasi: TextView = view.findViewById(R.id.tv_destinasi)
         private  val imageDestinasi: ImageView = view.findViewById(R.id.img_destinasi)
         fun bindDestinasi(destinasi: Destinasi){
-            textViewDestinasi.text = destinasi.name
+            textViewDestinasi.text = destinasi.nama
             //Picasso.get().load(destinasi.image).into(imageDestinasi)
         }
     }

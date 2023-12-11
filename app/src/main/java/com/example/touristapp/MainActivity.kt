@@ -6,15 +6,20 @@ import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
+import com.google.firebase.database.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var dbRef: DatabaseReference
+    private lateinit var listDestinasi: ArrayList<Destinasi>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,28 +50,62 @@ class MainActivity : AppCompatActivity() {
         toAddDestinasiActivity.setOnClickListener {
             val intent = Intent(this, AddDestinasiActivity::class.java)
             startActivity(intent)
+
         }
 
 
-        val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
+        //val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
         //rvDestinasi.adapter = DestinasiAdapter(this, )
 
         //rvDestinasi.setHasFixedSize(true)
 
 
-        val listDestinasi = listOf(
-            Destinasi(nama = "List 1",),
-            Destinasi(nama = "List 2",),
-            Destinasi(nama = "List 3",)
-        )
+//        val listDestinasi = listOf(
+//            Destinasi(nama = "List 1",),
+//            Destinasi(nama = "List 2",),
+//            Destinasi(nama = "List 3",)
+//        )
+        listDestinasi = arrayListOf<Destinasi>()
 
-        val destinasiAdapter = DestinasiAdapter(listDestinasi)
+        getDestinasiData()
 
-        rvDestinasi.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = destinasiAdapter
-        }
+        //val destinasiAdapter = DestinasiAdapter(listDestinasi)
 
+//        rvDestinasi.apply {
+//            layoutManager = LinearLayoutManager(this@MainActivity)
+//            adapter = destinasiAdapter
+//        }
+
+    }
+
+    private fun getDestinasiData() {
+        dbRef = FirebaseDatabase.getInstance().getReference("Destinasi")
+
+        dbRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listDestinasi.clear()
+                if (snapshot.exists()){
+                    for (destinasiSnap in snapshot.children){
+                        val destinasiData = destinasiSnap.getValue(Destinasi::class.java)
+                        listDestinasi.add(destinasiData!!)
+                    }
+                    //
+                    val destinasiAdapter = DestinasiAdapter(listDestinasi)
+
+                    val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
+
+                    rvDestinasi.apply {
+                        layoutManager = LinearLayoutManager(this@MainActivity)
+                        adapter = destinasiAdapter
+                    }
+                    //
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     //val toKategoriFragment: ImageView = findViewById(R.id.icon3)

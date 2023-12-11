@@ -9,6 +9,7 @@ data class Destinasi(
     val kategori: String? = null,
     val lokasi: String? = null,
     val pemilik: String? = null,
-    //val gambar: Image,
+    val titik : String? = null,
+    val urlGambar: String? = null
     //val latLng: LatLng
 )

@@ -22,7 +22,7 @@ class DestinasiAdapter(
         private  val imageDestinasi: ImageView = view.findViewById(R.id.img_destinasi)
         fun bindDestinasi(destinasi: Destinasi){
             textViewDestinasi.text = destinasi.nama
-            //Picasso.get().load(destinasi.image).into(imageDestinasi)
+            Picasso.get().load(destinasi.urlGambar).into(imageDestinasi)
         }
     }
 

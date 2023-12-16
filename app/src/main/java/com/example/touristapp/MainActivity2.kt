@@ -23,11 +23,11 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun addMarkers(googleMap: GoogleMap) {
         places.forEach { place ->
-            val marker = googleMap.addMarker(
-                MarkerOptions()
-                    .title(place.nama)
-                    //.position(place.latLng)
-            )
+//            val marker = googleMap.addMarker(
+//                MarkerOptions()
+//                    .title(place.nama)
+//                    //.position(place.latLng)
+//            )
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.touristapp
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -69,6 +70,11 @@ class AddDestinasiActivity : AppCompatActivity() {
 
         btn_ok.setOnClickListener {
             saveDestinasiData()
+        }
+
+        btn_exit.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -53,6 +53,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val toLoginActivity: View = findViewById(R.id.icon1)
+
+        toLoginActivity.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
 
         //val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
         //rvDestinasi.adapter = DestinasiAdapter(this, )
@@ -90,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                         listDestinasi.add(destinasiData!!)
                     }
                     //
-                    val destinasiAdapter = DestinasiAdapter(listDestinasi)
+                    val destinasiAdapter = DestinasiAdapter(listDestinasi,this@MainActivity)
 
                     val rvDestinasi = findViewById<RecyclerView>(R.id.rvDestinasi)
 
@@ -101,6 +108,7 @@ class MainActivity : AppCompatActivity() {
                     //
                 }
             }
+
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")

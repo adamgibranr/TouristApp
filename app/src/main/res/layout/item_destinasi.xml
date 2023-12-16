@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/img_destinasi"
-        android:layout_width="150dp"
+        android:layout_width="125dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,16 +16,29 @@
 
     <TextView
         android:id="@+id/tv_destinasi"
-        android:layout_width="150dp"
+        android:layout_width="125dp"
         android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
         android:text="judul"
         android:textSize="16sp"
-        android:layout_marginLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_destinasi"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/menu_more"
+        android:layout_width="50dp"
+        android:layout_height="33dp"
+        android:src="@drawable/moremenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_destinasi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.507" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

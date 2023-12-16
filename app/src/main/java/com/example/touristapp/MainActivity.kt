@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
         val toLoginActivity: View = findViewById(R.id.icon1)
 
         toLoginActivity.setOnClickListener {

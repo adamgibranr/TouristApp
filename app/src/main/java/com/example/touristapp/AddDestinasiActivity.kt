@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.*
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -33,6 +34,8 @@ class AddDestinasiActivity : AppCompatActivity() {
     private lateinit var email: String
     private lateinit var uri: Uri
 
+    private var latLng: LatLng? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,9 @@ class AddDestinasiActivity : AppCompatActivity() {
         input_lokasi = findViewById(R.id.input_lokasi)
         input_titik = findViewById(R.id.input_titik)
         input_gambar = findViewById(R.id.input_gambar)
+
+        val intent = intent
+        latLng = intent.getParcelableExtra("latlng")
 
         btn_exit = findViewById(R.id.btn_exit_adddestinasi)
         btn_ok = findViewById(R.id.btn_ok_adddestinasi)
@@ -74,6 +80,11 @@ class AddDestinasiActivity : AppCompatActivity() {
 
         btn_exit.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        input_titik.setOnClickListener{
+            val intent = Intent(this, AddCoordinateActivity::class.java)
             startActivity(intent)
         }
     }
@@ -113,7 +124,7 @@ class AddDestinasiActivity : AppCompatActivity() {
 
                             val destinasiId = dbRef.push().key!!
 
-                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar)
+                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar, latLng)
 
                             dbRef.child(destinasiId).setValue(destinasi)
                                 .addOnCompleteListener {

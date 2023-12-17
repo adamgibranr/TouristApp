@@ -25,6 +25,11 @@ class AddCoordinateActivity : AppCompatActivity(), OnMapReadyCallback {
             R.id.map_fragment
         ) as? SupportMapFragment
         mapFragment?.getMapAsync ( this)
+
+
+        btn_ok.setOnClickListener {
+            onOkButtonClick()
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

@@ -9,7 +9,7 @@
     android:layout_height="470dp"
     android:orientation="vertical"
     tools:context=".KategoriActivity"
-    android:background="@drawable/ic_launcher_background">
+    android:background="#5271FF">
 
 
     <ImageView

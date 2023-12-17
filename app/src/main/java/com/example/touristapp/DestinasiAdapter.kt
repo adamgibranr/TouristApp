@@ -91,6 +91,11 @@ class DestinasiAdapter(
         //val item = destinasiList[position]
         holder.bindDestinasi(destinasiList[position])
         //holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(c, DetailDestinasiActivity::class.java)
+            intent.putExtra("position", destinasiList[position].destinasiId)
+            c.startActivity(intent)
+        }
     }
 
     fun deleteRecord(id: String) {
@@ -103,6 +108,5 @@ class DestinasiAdapter(
             Toast.makeText(c, "Data gagal dihapus", Toast.LENGTH_SHORT).show()
         }
     }
-
 
 }

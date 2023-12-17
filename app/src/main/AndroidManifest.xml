@@ -24,9 +24,6 @@
             android:name=".AddCoordinateActivity"
             android:exported="false" />
         <activity
-            android:name=".OpsiActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddDestinasiActivity"
             android:exported="false" />
         <activity

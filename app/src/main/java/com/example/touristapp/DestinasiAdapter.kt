@@ -18,8 +18,8 @@ import com.squareup.picasso.Picasso
 class DestinasiAdapter(
 
     //private val context: Context,
-    private val destinasiList: List<Destinasi>,
-    private val c: Context
+    private var destinasiList: List<Destinasi>,
+    private var c: Context
 
     ) : RecyclerView.Adapter<DestinasiAdapter.DestinasiHolder>() {
 
@@ -107,6 +107,16 @@ class DestinasiAdapter(
         }.addOnFailureListener {
             Toast.makeText(c, "Data gagal dihapus", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun updateList(newList: List<Destinasi>) {
+        destinasiList = newList
+        notifyDataSetChanged()
+    }
+
+    fun filterByCategory(category: String) {
+        val filteredList = destinasiList.filter { it.kategori == category }
+        updateList(filteredList)
     }
 
 }

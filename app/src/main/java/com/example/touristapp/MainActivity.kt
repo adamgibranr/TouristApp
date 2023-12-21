@@ -20,9 +20,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
     private lateinit var listDestinasi: ArrayList<Destinasi>
+    private lateinit var filter: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        filter = intent.getStringExtra("filter")?: "default_filter_value"
 
         val toMainActivity: View = findViewById(R.id.button_destinasi)
 
@@ -107,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                         adapter = destinasiAdapter
                     }
                     //
+                    destinasiAdapter.filterByCategory(filter)
                 }
             }
 

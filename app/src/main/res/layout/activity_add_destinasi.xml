@@ -7,6 +7,16 @@
     android:background="#5271FF"
     tools:context=".AddDestinasiActivity">
 
+    <EditText
+        android:id="@+id/input_deskripsi"
+        android:layout_width="195dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="40dp"
+        android:hint="hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_kategori"
         android:layout_width="200dp"
@@ -138,6 +148,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="464dp"
+        android:text="Deskripsi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

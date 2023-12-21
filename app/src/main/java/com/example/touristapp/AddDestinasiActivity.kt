@@ -25,6 +25,7 @@ class AddDestinasiActivity : AppCompatActivity() {
     private lateinit var input_lokasi: TextInputEditText
     private lateinit var input_titik: TextInputEditText
     private lateinit var input_gambar: ImageView
+    private lateinit var input_deskripsi: EditText
 
     private lateinit var btn_exit: ImageButton
     private lateinit var btn_ok: ImageButton
@@ -55,6 +56,7 @@ class AddDestinasiActivity : AppCompatActivity() {
         input_lokasi = findViewById(R.id.input_lokasi)
         input_titik = findViewById(R.id.input_titik)
         input_gambar = findViewById(R.id.input_gambar)
+        input_deskripsi = findViewById(R.id.input_deskripsi)
 
         val intent = intent
         latLng = intent.getParcelableExtra("latlng")
@@ -95,6 +97,7 @@ class AddDestinasiActivity : AppCompatActivity() {
         var lokasi = input_lokasi.text.toString()
         var pemilik = email
         var titik = input_titik.text.toString()
+        var deskripsi = input_deskripsi.text.toString()
 
         if (nama.isEmpty()){
             input_nama.error = "Masukkan inputan data"
@@ -124,7 +127,7 @@ class AddDestinasiActivity : AppCompatActivity() {
 
                             val destinasiId = dbRef.push().key!!
 
-                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar, latLng)
+                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar, latLng, deskripsi)
 
                             dbRef.child(destinasiId).setValue(destinasi)
                                 .addOnCompleteListener {

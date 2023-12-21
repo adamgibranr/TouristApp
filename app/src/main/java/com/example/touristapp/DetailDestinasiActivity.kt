@@ -22,6 +22,7 @@ class DetailDestinasiActivity : AppCompatActivity() {
     private lateinit var tv_pemilik: TextView
     private lateinit var urlGambar: String
     private lateinit var iv_foto: ImageView
+    private lateinit var tv_deskripsi: TextView
 
     private lateinit var dbRef: DatabaseReference
     private lateinit var storageRef: StorageReference
@@ -48,6 +49,7 @@ class DetailDestinasiActivity : AppCompatActivity() {
         tv_lokasi = findViewById(R.id.tv_lokasi_dtldestinasi)
         tv_pemilik = findViewById(R.id.tv_pemilik_dtldestinasi)
         iv_foto = findViewById(R.id.imageview_dtlactivity)
+        tv_deskripsi = findViewById(R.id.tv_deskripsi_dtldestinasi)
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -55,12 +57,14 @@ class DetailDestinasiActivity : AppCompatActivity() {
                 val kategori = snapshot.child("kategori").getValue(String::class.java)
                 val lokasi = snapshot.child("lokasi").getValue(String::class.java)
                 val pemilik = snapshot.child("pemilik").getValue(String::class.java)
+                val deskripsi = snapshot.child("deskripsi").getValue(String::class.java)
 
                 tv_nama.text = nama
                 tv_kategori.text = kategori
                 tv_lokasi.text = lokasi
                 tv_pemilik.text = pemilik
                 urlGambar = snapshot.child("urlGambar").getValue(String::class.java)!!
+                tv_deskripsi.text = deskripsi
 
                 Picasso.get().load(urlGambar).into(iv_foto)
 

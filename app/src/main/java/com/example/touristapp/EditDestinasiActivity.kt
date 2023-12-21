@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
@@ -27,6 +28,7 @@ class EditDestinasiActivity : AppCompatActivity() {
     private lateinit var input_lokasi: TextInputEditText
     private lateinit var input_titik: TextInputEditText
     private lateinit var input_gambar: ImageView
+    private lateinit var input_deskripsi: EditText
 
     private lateinit var btn_exit: ImageButton
     private lateinit var btn_ok: ImageButton
@@ -59,6 +61,7 @@ class EditDestinasiActivity : AppCompatActivity() {
         input_lokasi = findViewById(R.id.input_edit_lokasi)
         input_titik = findViewById(R.id.input_edit_titik)
         input_gambar = findViewById(R.id.input_edit_gambar)
+        input_deskripsi = findViewById(R.id.input_edit_deskripsi)
 
         btn_exit = findViewById(R.id.btn_exit_dtldestinasi)
         btn_ok = findViewById(R.id.btn_ok_dtldestinasi)
@@ -92,6 +95,7 @@ class EditDestinasiActivity : AppCompatActivity() {
         var lokasi = input_lokasi.text.toString()
         var pemilik = email
         var titik = input_titik.text.toString()
+        var deskripsi = input_deskripsi.text.toString()
 
         if (nama.isEmpty()){
             input_nama.error = "Masukkan inputan data"
@@ -121,7 +125,7 @@ class EditDestinasiActivity : AppCompatActivity() {
 
                             val destinasiId = position
 
-                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar, latLng)
+                            val destinasi = Destinasi(destinasiId, nama, kategori, lokasi, pemilik, titik, urlGambar, latLng, deskripsi)
 
                             dbRef.child(destinasiId).setValue(destinasi)
                                 .addOnCompleteListener {

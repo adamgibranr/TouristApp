@@ -11,6 +11,7 @@ data class Destinasi(
     val pemilik: String? = null,
     val titik : String? = null,
     val urlGambar: String? = null,
-    val latLng: LatLng? = null
+    val latLng: LatLng? = null,
+    val deskripsi: String? = null
     //val latLng: LatLng
 )

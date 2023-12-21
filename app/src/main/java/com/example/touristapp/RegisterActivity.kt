@@ -41,8 +41,9 @@ class RegisterActivity : AppCompatActivity() {
     private fun performSignUp(){
         val email = findViewById<EditText>(R.id.editText_email_register)
         val passwd = findViewById<EditText>(R.id.editText_password_register)
+        val konfirm = findViewById<EditText>(R.id.editText_konfirmasi_register)
 
-        if (email.text.isEmpty() || passwd.text.isEmpty()){
+        if (email.text.isEmpty() || passwd.text.isEmpty() || konfirm.text.isEmpty()){
             Toast.makeText(this, "email & password kosong", Toast.LENGTH_SHORT)
                 .show()
             return
@@ -50,37 +51,50 @@ class RegisterActivity : AppCompatActivity() {
 
         val inputEmail = email.text.toString()
         val inputPassword = passwd.text.toString()
+        val inputKonfirmasi = konfirm.text.toString()
 
-        auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+        if (inputKonfirmasi == inputPassword){
+
+            auth.createUserWithEmailAndPassword(inputEmail, inputPassword)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
 //                    Log.d(TAG, "createUserWithEmail:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
 
-                    Toast.makeText(
-                        baseContext,
-                        "Authentication success.",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                        Toast.makeText(
+                            baseContext,
+                            "Authentication success.",
+                            Toast.LENGTH_SHORT,
+                        ).show()
 
-                } else {
-                    // If sign in fails, display a message to the user.
+                    } else {
+                        // If sign in fails, display a message to the user.
 //                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext,
-                        "Authentication failed.",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                        Toast.makeText(
+                            baseContext,
+                            "Authentication failed.",
+                            Toast.LENGTH_SHORT,
+                        ).show()
 //                    updateUI(null)
+                    }
                 }
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Error",Toast.LENGTH_SHORT)
-                    .show()
-            }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error",Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+        }
+        else {
+            Toast.makeText(
+                baseContext,
+                "Password anda salah",
+                Toast.LENGTH_SHORT,
+            ).show()
+
+        }
     }
 }

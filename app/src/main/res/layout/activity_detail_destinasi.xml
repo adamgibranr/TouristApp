@@ -31,10 +31,12 @@
 
     <ImageButton
         android:id="@+id/btn_exit_dtldestinasi"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/border_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/button_back_exit" />

@@ -12,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="504dp"
         android:text="Deskripsi"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +22,9 @@
         android:id="@+id/input_edit_deskripsi"
         android:layout_width="195dp"
         android:layout_height="97dp"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="496dp"
+        android:layout_marginEnd="36dp"
+        android:background="#B1C7EA"
         android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,27 +36,34 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Ubah Lokasi Wisata"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_exit_dtldestinasi"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
+        android:background="@drawable/border_style"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/button_back_exit" />
 
     <ImageButton
         android:id="@+id/btn_ok_dtldestinasi"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/border_style"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/button_save" />
 
@@ -63,8 +72,9 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="308dp"
         android:text="Titik"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,8 +83,9 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="200dp"
         android:text="Kategori"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,8 +94,9 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="364dp"
         android:text="Gambar"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,6 +107,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="148dp"
         android:text="Nama"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,8 +116,9 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="252dp"
         android:text="Lokasi"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,8 +126,8 @@
         android:id="@+id/input_edit_gambar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="336dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground" />
@@ -122,8 +136,9 @@
         android:id="@+id/input_edit_lokasi"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="252dp"
         android:layout_marginEnd="36dp"
+        android:background="#B1C7EA"
         android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -134,6 +149,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="148dp"
         android:layout_marginEnd="36dp"
+        android:background="#B1C7EA"
         android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -142,8 +158,9 @@
         android:id="@+id/input_edit_kategori"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="36dp"
+        android:background="#B1C7EA"
         android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -152,8 +169,9 @@
         android:id="@+id/input_edit_titik"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="308dp"
         android:layout_marginEnd="36dp"
+        android:background="#B1C7EA"
         android:hint="hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

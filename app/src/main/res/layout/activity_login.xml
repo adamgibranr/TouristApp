@@ -75,6 +75,8 @@
         android:padding="15dp"
         android:text="Login Now"
         android:textSize="18dp"
+        android:textColor="@color/white"
+        android:backgroundTint="#5271FF"
         app:layout_constraintEnd_toEndOf="@+id/editText_password_login"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/editText_password_login"

@@ -79,23 +79,29 @@
 
         <ImageButton
             android:id="@+id/icon1"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:background="@drawable/border_style"
+            android:backgroundTint="@color/white"
             android:src="@drawable/button_back_exit"/>
 
         <ImageButton
             android:id="@+id/icon2"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="120dp"
+            android:background="@drawable/border_style"
+            android:backgroundTint="@color/white"
             android:src="@drawable/button_add"/>
 
         <ImageButton
             android:id="@+id/icon3"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="105dp"
+            android:background="@drawable/border_style"
+            android:backgroundTint="@color/white"
             android:src="@drawable/button_filter"/>
     </LinearLayout>
 

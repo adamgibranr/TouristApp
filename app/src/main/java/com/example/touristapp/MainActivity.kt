@@ -108,9 +108,17 @@ class MainActivity : AppCompatActivity() {
                     rvDestinasi.apply {
                         layoutManager = LinearLayoutManager(this@MainActivity)
                         adapter = destinasiAdapter
+                        if (filter != "default_filter_value") {
+                            destinasiAdapter.filterByCategory(filter)
+                        }
                     }
                     //
-                    destinasiAdapter.filterByCategory(filter)
+//                    if (filter != null) {
+//                        destinasiAdapter.filterByCategory(filter)
+//                    }
+//                    else {
+//                        destinasiAdapter
+//                    }
                 }
             }
 

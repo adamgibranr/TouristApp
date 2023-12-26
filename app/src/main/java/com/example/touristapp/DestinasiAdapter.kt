@@ -12,7 +12,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
 class DestinasiAdapter(
@@ -37,6 +39,7 @@ class DestinasiAdapter(
         private fun popupMenus(v: View) {
 
             val position:String = destinasiList[adapterPosition].destinasiId!!
+            val urlGambar:String = destinasiList[adapterPosition].urlGambar!!
             val popupMenus = PopupMenu(c, v)
             popupMenus.inflate(R.menu.menu_popup)
             popupMenus.setOnMenuItemClickListener {
@@ -52,7 +55,8 @@ class DestinasiAdapter(
                     }
                     R.id.action2 -> {
                         deleteRecord(
-                            position
+                            position,
+                            urlGambar
                         )
                         notifyDataSetChanged()
                         Toast.makeText(c, "Delete", Toast.LENGTH_SHORT).show()
@@ -98,15 +102,22 @@ class DestinasiAdapter(
         }
     }
 
-    fun deleteRecord(id: String) {
+    fun deleteRecord(id: String, urlGambar: String) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Destinasi").child(id)
-        val mTask = dbRef.removeValue()
+        val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(urlGambar)
 
-        mTask.addOnSuccessListener {
-            Toast.makeText(c, "Data dihapus", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener {
-            Toast.makeText(c, "Data gagal dihapus", Toast.LENGTH_SHORT).show()
-        }
+
+        val mTask = dbRef.removeValue()
+        val storageTask = storageRef.delete()
+
+
+        Tasks.whenAllSuccess<Any>(mTask, storageTask)
+            .addOnSuccessListener {
+                Toast.makeText(c, "Data dihapus", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(c, "Data gagal dihapus", Toast.LENGTH_SHORT).show()
+            }
+
     }
 
     fun updateList(newList: List<Destinasi>) {

@@ -16,7 +16,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <ImageView
         android:id="@+id/imageview_dtlactivity"
@@ -50,7 +52,9 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_kategori_dtldestinasi"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/textView17"
@@ -61,7 +65,9 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_lokasi_dtldestinasi"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/textView18"
@@ -72,7 +78,9 @@
         app:layout_constraintEnd_toStartOf="@+id/tv_pemilik_dtldestinasi"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/tv_kategori_dtldestinasi"
@@ -108,11 +116,13 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="496dp"
         android:text="Deskripsi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/tv_deskripsi_dtldestinasi"

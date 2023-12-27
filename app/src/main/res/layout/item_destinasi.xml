@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:background="@drawable/border_style"
     android:backgroundTint="#D9D9D9"
     android:layout_margin="5dp"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/tv_destinasi"
-        android:layout_width="125dp"
+        android:layout_width="191dp"
         android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:text="judul"
@@ -29,7 +29,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_destinasi"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <ImageView
         android:id="@+id/menu_more"
@@ -38,7 +40,7 @@
         android:src="@drawable/moremenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.826"
         app:layout_constraintStart_toEndOf="@+id/tv_destinasi"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.507" />
